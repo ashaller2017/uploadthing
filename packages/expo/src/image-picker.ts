@@ -59,6 +59,11 @@ export const GENERATE_useImageUploader = <
          */
         source?: "library" | "camera";
         /**
+         * The quality of the image to pick
+         * @default 1
+         */
+        quality?: number;
+        /**
          * Called when there are insufficient permissions to use the image picker
          */
         onInsufficientPermissions?: () => void;
@@ -98,6 +103,7 @@ export const GENERATE_useImageUploader = <
         mediaTypes: mediaTypes ?? ImagePicker.MediaTypeOptions.All,
         allowsEditing: multiple ? false : allowsEditing,
         allowsMultipleSelection: multiple,
+        quality: opts.quality ?? 1,
       });
       if (response.canceled) return opts.onCancel?.();
 

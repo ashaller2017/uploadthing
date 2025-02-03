@@ -103,7 +103,7 @@ export const GENERATE_useImageUploader = <
         mediaTypes: mediaTypes ?? ImagePicker.MediaTypeOptions.All,
         allowsEditing: multiple ? false : allowsEditing,
         allowsMultipleSelection: multiple,
-        quality: quality,
+        quality,
       });
       if (response.canceled) return opts.onCancel?.();
 
